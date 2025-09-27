@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adox Technologies - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <h1>Adox Technologies</h1>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="training.html">Training</a>
+      <a href="education-tools.html">Education Tools</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero-section">
+    <h2>Empowering IT Solutions & Education</h2>
+    <p>Your trusted partner for digital transformation, training, and smart learning tools.</p>
+    <a href="services.html"><button class="hero-btn">Explore Our Solutions</button></a>
+  </div>
+
+  <div class="carousel">
+    <img src="images/slide1.jpg" class="active" alt="Slide 1">
+    <img src="images/slide2.jpg" alt="Slide 2">
+    <img src="images/slide3.jpg" alt="Slide 3">
+    <div class="carousel-buttons">
+      <button onclick="prevSlide()">&#10094;</button>
+      <button onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Our Expertise</div>
+    <div class="card-list">
+      <div class="card">
+        <div class="icon">💻</div>
+        <div class="card-title">IT Solutions</div>
+        <div class="card-desc">Enterprise software, cloud services, custom app/web development, and secure IT infrastructure.</div>
+      </div>
+      <div class="card">
+        <div class="icon">🎓</div>
+        <div class="card-title">Education Tools</div>
+        <div class="card-desc">Smart e-learning platforms, classroom management, and digital content for modern education.</div>
+      </div>
+      <div class="card">
+        <div class="icon">🧑‍🏫</div>
+        <div class="card-title">Training Programs</div>
+        <div class="card-desc">Corporate & academic training in coding, cloud, data, and digital skills.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Leadership</div>
+    <div class="people-highlight">
+      <div class="person">
+        <img src="images/ghanshyam.jpg" alt="Er. Ghanshyam Chaurasia" />
+        <div class="person-info">
+          <div class="person-name">Er. Ghanshyam Chaurasia</div>
+          <div class="person-title">Founder & CEO</div>
+        </div>
+      </div>
+      <div class="person">
+        <img src="images/saumaya.jpg" alt="Dr. Saumaya Chaurasia" />
+        <div class="person-info">
+          <div class="person-name">Dr. Saumaya Chaurasia</div>
+          <div class="person-title">Director</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Adox Technologies | <a href="mailto:adoxtechnologies306@gmail.com">adoxtechnologies306@gmail.com</a>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel img');
+    function showSlide(index){
+      slides.forEach((slide,i)=>{slide.classList.remove('active'); if(i===index) slide.classList.add('active');});
+    }
+    function nextSlide(){currentSlide=(currentSlide+1)%slides.length;showSlide(currentSlide);}
+    function prevSlide(){currentSlide=(currentSlide-1+slides.length)%slides.length;showSlide(currentSlide);}
+    setInterval(nextSlide,5000);
+  </script>
+</body>
+</html>
